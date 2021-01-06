@@ -1,6 +1,6 @@
 import React from 'react' 
 
-function Todo({todo, toggleComplete, removeTodo}) {
+function Todo({removeTodo, toggleComplete, todo}) {
 
     function handleCheck() {
         toggleComplete(todo.id)
@@ -12,11 +12,11 @@ function Todo({todo, toggleComplete, removeTodo}) {
 
     return(
         
-        <div style={{display: 'flex', textAlign: 'center', marginBottom: '10px', backgroundColor: 'GrayText'}}>
+        <div style={{ textAlign: 'center', marginBottom: '10px', backgroundColor: 'GrayText'}}>
             
-            <div className="d-flex row justify-content-between" style={{width:'400px'}}>
+            <div className="d-flex row justify-content-between" style={{width:'398px'}}>
             <input type='checkbox' onClick={handleCheck} style={{marginTop:'10px'}}></input>
-            <li style={{color: 'white', textDecoration: todo.completed ? 'line-through' : null, listStyle:'none'}}>{todo.task}</li>
+            <li style={{color: todo.completed ? 'black' : 'white', textDecoration: todo.completed ? 'line-through' : null, listStyle:'none'}}>{todo.task} {todo.id}</li>
             <button type='button' onClick={del} className="btn btn-primary btn-sm">Delete</button>
             </div>
         </div>

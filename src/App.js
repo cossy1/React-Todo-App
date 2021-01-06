@@ -1,14 +1,14 @@
 import React, { useState, useEffect } from 'react'
 import Title from './components/Title'
 import TodoForm from './components/TodoForm'
-import TodoList from './components/TodoList';
-import './index.css';
+import TodoList from './components/TodoList'
+import './index.css'
 
 const LOCAL_STORAGE_KEY = "react-todo-list"
 
 
 function App() {
-  const [todos, setTodos] = useState([]);
+const [todos, setTodos] = useState([]);
 
 function addTodo(todo) {
   setTodos([todo, ...todos]);
@@ -30,6 +30,7 @@ function toggleComplete(id) {
 
 function removeTodo(id) {
   setTodos(
+    // eslint-disable-next-line array-callback-return
     todos.filter((todo)=>{
       if(todo.id !== id)
       return todo;
@@ -53,10 +54,10 @@ useEffect(()=>{
 
   return(
     <div className='main'>
-      <Title />
+     <Title />
       <TodoForm  addTodo={addTodo} />
-      <TodoList todos={todos} toggleComplete={toggleComplete} removeTodo={removeTodo}/>
-    </div>
+      <TodoList todos={todos} toggleComplete={toggleComplete} removeTodo={removeTodo} />
+     </div>
   );
 } 
 export default App

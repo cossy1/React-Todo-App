@@ -28,10 +28,11 @@ function handleSubmit(e) {
     }
 }
     return(
-        <div>
+        <div style={{alignContent: 'center', width: "400px", marginLeft: "45px"}}>
             <form onSubmit={handleSubmit}>
             <input type='text' value={todo.task} onChange={handleInputChange}></input>
-            <button type='submit' className="btn btn-success btn-lg" style={{marginTop: 0, marginBottom: 7}}  onClick={()=>todoId(id+1)}>Add Todo</button>
+            <button type='submit' className="btn btn-success btn-lg" style={{marginTop: 0, marginBottom: 7}} 
+            onClick={()=>todoId(currentId => currentId + 1)}>Add Todo</button>
             </form>
         </div>
     );
