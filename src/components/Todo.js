@@ -16,7 +16,7 @@ function Todo({removeTodo, toggleComplete, todo}) {
             
             <div className="d-flex row justify-content-between" style={{width:'398px'}}>
             <input type='checkbox' onClick={handleCheck} style={{marginTop:'10px'}}></input>
-            <li style={{color: todo.completed ? 'black' : 'white', textDecoration: todo.completed ? 'line-through' : null, listStyle:'none'}}>{todo.task} {todo.id}</li>
+            <li style={{color: todo.completed ? 'black' : 'white', textDecoration: todo.completed ? 'line-through' : null, listStyle:'none'}}>{todo.task}</li>
             <button type='button' onClick={del} className="btn btn-primary btn-sm">Delete</button>
             </div>
         </div>

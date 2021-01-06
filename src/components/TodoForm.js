@@ -7,7 +7,7 @@ function TodoForm({addTodo}) {
     const [todo, setTodo] = useState({
         id: '',
         task: '',
-        completed: false
+        completed: false,
     })
 
 function handleInputChange(e) {
@@ -32,7 +32,7 @@ function handleSubmit(e) {
             <form onSubmit={handleSubmit}>
             <input type='text' value={todo.task} onChange={handleInputChange}></input>
             <button type='submit' className="btn btn-success btn-lg" style={{marginTop: 0, marginBottom: 7}} 
-            onClick={()=>todoId(currentId => currentId + 1)}>Add Todo</button>
+            onClick={() => todoId(currentState => currentState + 1)}>Add Todo</button>
             </form>
         </div>
     );
